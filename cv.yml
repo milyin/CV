@@ -1,6 +1,8 @@
 ---
 person:
-  name: Mikhail ILIN
+  # A parenthesized alternative (latin) spelling is rendered by the theme as a
+  # secondary name; the part before the parenthesis is used as the page title.
+  name: Mikhail ILIN (Michael Ilyin)
   depiction: images/profile.jpg
   profession: Senior Software Engineer — Rust / C++ / Systems Programming
   location: Orsay (91), France
@@ -191,9 +193,13 @@ technicalSkills:
         - name: Desktop GUI (Windows)
 
 sideProjects:
+  # Description lines after the first follow the "Label: URL" form and are
+  # rendered by the theme as additional link lines under the project link.
   - name: zenoh
     position: core contributor
-    description: "Zero-overhead pub/sub, store/query and compute protocol — my primary project at ZettaScale Labs (see Work History)."
+    description: |-
+      Zero-overhead pub/sub, store/query and compute protocol — my primary project at ZettaScale Labs (see Work History).
+      Eclipse membership: https://projects.eclipse.org/projects/iot.zenoh/who
     link: eclipse-zenoh/zenoh
     type: github
     langs: Rust
@@ -209,14 +215,18 @@ sideProjects:
 
   - name: zbobr
     position: personal
-    description: A state-machine LLM agent dispatcher that uses GitHub issues to keep task context. Used in real projects before equivalent features appeared in Claude Code and GitHub Copilot.
+    description: |-
+      A state-machine LLM agent dispatcher that uses GitHub issues to keep task context. Used in real projects before equivalent features appeared in Claude Code and GitHub Copilot.
+      Example tasks: https://github.com/milyin-zenoh-zbobr/tasks/issues
     link: milyin/zbobr
     type: github
     langs: Rust
     color: dea584
 
+# companyName groups the entries: each distinct value becomes a sidebar
+# section with that heading (e.g. Patents, Certifications).
 certifications:
-  - companyName: USPTO
+  - companyName: Patents
     certificationName: US Patent 7,584,404 — Method and apparatus for multimedia communication over packet channels
     issuer: United States Patent and Trademark Office
     date: Filed 2002, granted 2009

@@ -3,9 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Person.Name }}'s CV</title>
-    <meta name="author" content="{{ .Person.Name }}"/>
-    <meta name="description" content="{{ .Person.Name }}'s CV"/>
+    {{- /* "Name (Alternative Spelling)" — the part before the parenthesis is
+           the primary name; the parenthesized part is styled separately. */}}
+    {{- $nameParts := split .Person.Name " (" }}
+    {{- $name := index $nameParts 0 }}
+    <title>{{ $name }}'s CV</title>
+    <meta name="author" content="{{ $name }}"/>
+    <meta name="description" content="{{ $name }}'s CV"/>
     <link href="css/default.css" rel="stylesheet">
   </head>
 
@@ -16,7 +20,7 @@
 
         <div class="main">
 
-          <h1 class="name">{{ .Person.Name }} <span class="name-alt">(Michael Ilyin)</span></h1>
+          <h1 class="name">{{ $name }}{{ if gt (len $nameParts) 1 }} <span class="name-alt">({{ index $nameParts 1 }}</span>{{ end }}</h1>
           {{ if .Person.Profession }}<div class="profession">{{ .Person.Profession }}</div>{{ end }}
 
           {{- if .Abstract }}
@@ -51,7 +55,7 @@
 
         <div class="sidebar">
 
-          {{ if .Person.Depiction }}<img class="photo" src="{{ .Person.Depiction }}" alt="{{ .Person.Name }}">{{ end }}
+          {{ if .Person.Depiction }}<img class="photo" src="{{ .Person.Depiction }}" alt="{{ $name }}">{{ end }}
 
           <h2>Contact</h2>
           <div class="block side-block">
@@ -95,42 +99,44 @@
           <h2>Open Source Projects</h2>
           <div class="block side-block">
             {{ range .SideProjects }}
+            {{- /* First description line is the text; each further "Label: URL"
+                   line is rendered as an additional link line. */}}
+            {{- $lines := split .Description "\n" }}
             <div class="project">
-              <b>{{ .Name }}</b> <span class="muted">({{ .Position }})</span> — {{ .Description }}
-              <div class="muted small"><a href="https://github.com/{{ .Link }}">github.com/{{ .Link }}</a></div>
-              {{ if eq .Name "zenoh" }}<div class="muted small">Eclipse membership: <a href="https://projects.eclipse.org/projects/iot.zenoh/who">projects.eclipse.org/projects/iot.zenoh</a></div>{{ end }}
-              {{ if eq .Name "zbobr" }}<div class="muted small">Example tasks: <a href="https://github.com/milyin-zenoh-zbobr/tasks/issues">github.com/milyin-zenoh-zbobr/tasks/issues</a></div>{{ end }}
+              <b>{{ .Name }}</b> <span class="muted">({{ .Position }})</span> — {{ index $lines 0 }}
+              {{- if .Link }}
+              {{- $url := .Link }}{{ if eq .Type "github" }}{{ $url = print "https://github.com/" .Link }}{{ end }}
+              <div class="muted small"><a href="{{ $url }}">{{ replace $url "https://" "" }}</a></div>
+              {{- end }}
+              {{- range slice $lines 1 }}
+              {{- $kv := split . ": " }}
+              <div class="muted small">{{ if gt (len $kv) 1 }}{{ index $kv 0 }}: <a href="{{ index $kv 1 }}">{{ replace (index $kv 1) "https://" "" }}</a>{{ else }}{{ . }}{{ end }}</div>
+              {{- end }}
             </div>
             {{ end }}
           </div>
           {{- end }}
 
           {{- if .Certifications }}
-          {{- $hasPatents := false }}{{- $hasCerts := false }}
-          {{- range .Certifications }}{{ if eq .CompanyName "USPTO" }}{{ $hasPatents = true }}{{ else }}{{ $hasCerts = true }}{{ end }}{{ end }}
-          {{- if $hasPatents }}
-          <h2>Patents</h2>
-          <div class="block side-block">
-            <ul>
-              {{ range .Certifications }}{{ if eq .CompanyName "USPTO" }}
-              <li>{{ .CertificationName }} — {{ .Issuer }}, {{ .Date }}
-                {{ if .Link }}<div class="muted small"><a href="{{ .Link }}">{{ slice .Link 8 }}</a></div>{{ end }}</li>
-              {{ end }}{{ end }}
+          {{- /* Consecutive entries sharing a companyName form one section,
+                 with the companyName as its heading. */}}
+          {{- $group := "" }}
+          {{- range .Certifications }}
+          {{- if ne .CompanyName $group }}
+          {{- if ne $group "" }}
             </ul>
           </div>
           {{- end }}
-
-          {{- if $hasCerts }}
-          <h2>Certifications</h2>
+          {{- $group = .CompanyName }}
+          <h2>{{ .CompanyName }}</h2>
           <div class="block side-block">
             <ul>
-              {{ range .Certifications }}{{ if ne .CompanyName "USPTO" }}
+          {{- end }}
               <li>{{ .CertificationName }} — {{ .Issuer }}, {{ .Date }}
-                {{ if .Link }}<div class="muted small"><a href="{{ .Link }}">{{ slice .Link 8 }}</a></div>{{ end }}</li>
-              {{ end }}{{ end }}
+                {{ if .Link }}<div class="muted small"><a href="{{ .Link }}">{{ replace .Link "https://" "" }}</a></div>{{ end }}</li>
+          {{- end }}
             </ul>
           </div>
-          {{- end }}
           {{- end }}
 
           {{- if .Languages }}

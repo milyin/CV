@@ -19,6 +19,21 @@ The PDF is generated locally with `scripts/generate-pdf.sh` and is not published
 - `bin/cvwonder` — the CV Wonder binary (v0.10.1, darwin/arm64)
 - `scripts/generate-pdf.sh` — local PDF generation (injects the extra data)
 
+## Data conventions
+
+All CV content lives in `cv.yml`; the themes contain no personal data. CV Wonder's
+schema is fixed, so a few fields carry structured content the `twocolumn` theme
+interprets:
+
+- `person.name` — a parenthesized alternative spelling (`Mikhail ILIN (Michael Ilyin)`)
+  is rendered as a styled secondary name; the part before the parenthesis is used
+  for the page title and photo alt text.
+- `sideProjects[].description` — may be multi-line: the first line is the
+  description, each following `Label: URL` line is rendered as an extra link line
+  under the project link. Other themes render the block as plain text, which stays readable.
+- `certifications[].companyName` — acts as a grouping label: consecutive entries
+  sharing a `companyName` form one sidebar section with that heading (e.g. `Patents`).
+
 ## Usage
 
 ```sh
