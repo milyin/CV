@@ -19,7 +19,7 @@ socialNetworks:
 
 abstract:
   - "Systems software engineer with 25+ years of experience in C++ and C, and experience in Rust since 2017, spanning network middleware, high-load backends, video transmission and desktop CAD/CAM applications."
-  - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; led the team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin, Java and Go."
+  - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; led the team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin and Java."
   - "Expert in FFI and cross-language API design; holder of US Patent 7,584,404 for error correction in multimedia streaming over packet-loss networks."
 
 career:
@@ -30,7 +30,7 @@ career:
         company: ZettaScale Labs
         location: Gif-sur-Yvette (91), France
         dates: September 2022 - Present
-        summary: Core developer of Zenoh, an open-source network library written in Rust and adopted as a Tier 1 communication middleware in ROS 2. Led the team responsible for aligning APIs across Rust, C, C++, Python, TypeScript, Kotlin, Java and Go.
+        summary: Core developer of Zenoh, an open-source network library written in Rust and adopted as a Tier 1 communication middleware in ROS 2. Led the team of 5 engineers responsible for aligning APIs across Rust, C, C++, Python, TypeScript, Kotlin and Java.
         technologies:
           - Rust
           - C
@@ -55,7 +55,7 @@ career:
         company: DownStream Technologies
         location: Marlborough, MA (Remote)
         dates: February 2015 - September 2022
-        summary: Returned to DownStream Technologies. Maintained and developed core components across the entire GUI product suite, including CAM350 (a specialized CAM system for PCB manufacturing) and BluePrint (a PCB documentation authoring tool).
+        summary: Maintained and developed core components across the entire GUI product suite, including CAM350 (a specialized CAM system for PCB manufacturing) and BluePrint (a PCB documentation authoring tool).
         technologies:
           - C++
           - MFC
@@ -75,18 +75,18 @@ career:
         company: AdLabs
         location: Moscow (Remote)
         dates: October 2012 - January 2015
-        summary: Developed and maintained a high-throughput digital advertising platform written in pure C on an asynchronous, event-driven architecture (libevent). Engineered low-level system optimizations under Linux, including shared memory access, network socket tuning, and high-performance scripting pipelines streaming data dumps from PostgreSQL directly into shared memory. Second engagement with AdLabs — first worked with them in 2005 as a freelance Perl/XSLT web backend developer.
+        summary: Developed and maintained a high-throughput digital advertising platform written in pure C on an asynchronous, event-driven architecture (libevent). This was a second engagement with AdLabs — first worked with them in 2005 as a freelance Perl/XSLT web backend developer.
         technologies:
           - C
           - C++
-          - Linux
+          - Linux sockets
           - libevent
           - PostgreSQL
           - Shared memory
           - RTB
         description:
           - Developed and deployed a real-time billing daemon capable of processing concurrent transactions across multiple platform services.
-          - Significantly reduced banner-system response latency by using a dependency graph to parallelize previously sequential requests to third-party services.
+          - 3x-4x times accelerated banner-system response by using a dependency graph to parallelize previously sequential requests to third-party services.
 
   - companyName: DownStream Technologies
     duration: June 2011 - October 2012
@@ -183,7 +183,7 @@ technicalSkills:
       competencies:
         - name: FFI & language bindings
         - name: Memory safety & unsafe Rust
-        - name: Async Rust (tokio)
+        - name: Async Rust (tokio, async-std)
         - name: High-performance networking
         - name: Distributed systems
         - name: Cross-platform (Linux / macOS / Windows)
@@ -213,7 +213,7 @@ sideProjects:
   - name: zbobr
     position: personal
     description: |-
-      A state-machine LLM agent dispatcher that uses GitHub issues to keep task context. Used in real projects before equivalent features appeared in Claude Code and GitHub Copilot.
+      A state-machine LLM agent dispatcher that uses GitHub issues to keep task context. 
       Example tasks: https://github.com/milyin-zenoh-zbobr/tasks/issues
     link: milyin/zbobr
     type: github
@@ -227,7 +227,7 @@ certifications:
     certificationName: US Patent 7,584,404 — Method and apparatus for multimedia communication over packet channels
     issuer: United States Patent and Trademark Office
     date: Filed 2002, granted 2009
-    link: https://patents.google.com/patent/US7584404B2/zh
+    link: https://patents.google.com/patent/US7584404B2/en
 
 languages:
   - name: Russian
@@ -238,7 +238,7 @@ languages:
     level: Intermediate
 
 education:
-  - schoolName: Nizhny Novgorod State University, Mechanic and Mathematical faculty
+  - schoolName: Nizhny Novgorod State University, Faculty of Mechanics and Mathematics
     degree: Master's degree in Mathematics and Computer Science
     location: Nizhny Novgorod
     dates: "2000"
