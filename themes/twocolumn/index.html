@@ -59,8 +59,8 @@
             {{ if .Person.Phone }}<div><b>Phone:</b> {{ .Person.Phone }}</div>{{ end }}
             {{ if .Person.Email }}<div><b>Email:</b> {{ .Person.Email }}</div>{{ end }}
             {{ if .SocialNetworks }}
-              {{ if .SocialNetworks.Github }}<div><b>GitHub:</b> github.com/{{ .SocialNetworks.Github }}</div>{{ end }}
-              {{ if .SocialNetworks.Linkedin }}<div><b>LinkedIn:</b> linkedin.com/in/{{ .SocialNetworks.Linkedin }}</div>{{ end }}
+              {{ if .SocialNetworks.Github }}<div><b>GitHub:</b> <a href="https://github.com/{{ .SocialNetworks.Github }}">github.com/{{ .SocialNetworks.Github }}</a></div>{{ end }}
+              {{ if .SocialNetworks.Linkedin }}<div><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/{{ .SocialNetworks.Linkedin }}">linkedin.com/in/{{ .SocialNetworks.Linkedin }}</a></div>{{ end }}
             {{ end }}
           </div>
 
@@ -97,7 +97,8 @@
             {{ range .SideProjects }}
             <div class="project">
               <b>{{ .Name }}</b> <span class="muted">({{ .Position }})</span> — {{ .Description }}
-              <div class="muted small">github.com/{{ .Link }}</div>
+              <div class="muted small"><a href="https://github.com/{{ .Link }}">github.com/{{ .Link }}</a></div>
+              {{ if eq .Name "zenoh" }}<div class="muted small">Eclipse membership: <a href="https://projects.eclipse.org/projects/iot.zenoh/who">projects.eclipse.org/projects/iot.zenoh</a></div>{{ end }}
             </div>
             {{ end }}
           </div>
@@ -111,7 +112,8 @@
           <div class="block side-block">
             <ul>
               {{ range .Certifications }}{{ if eq .CompanyName "USPTO" }}
-              <li>{{ if .Link }}<a href="{{ .Link }}">{{ .CertificationName }}</a>{{ else }}{{ .CertificationName }}{{ end }} — {{ .Issuer }}, {{ .Date }}</li>
+              <li>{{ .CertificationName }} — {{ .Issuer }}, {{ .Date }}
+                {{ if .Link }}<div class="muted small"><a href="{{ .Link }}">{{ slice .Link 8 }}</a></div>{{ end }}</li>
               {{ end }}{{ end }}
             </ul>
           </div>
@@ -122,7 +124,8 @@
           <div class="block side-block">
             <ul>
               {{ range .Certifications }}{{ if ne .CompanyName "USPTO" }}
-              <li>{{ if .Link }}<a href="{{ .Link }}">{{ .CertificationName }}</a>{{ else }}{{ .CertificationName }}{{ end }} — {{ .Issuer }}, {{ .Date }}</li>
+              <li>{{ .CertificationName }} — {{ .Issuer }}, {{ .Date }}
+                {{ if .Link }}<div class="muted small"><a href="{{ .Link }}">{{ slice .Link 8 }}</a></div>{{ end }}</li>
               {{ end }}{{ end }}
             </ul>
           </div>

@@ -101,6 +101,7 @@ h2 {
 
 .small {
   font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
 .photo {

@@ -188,7 +188,7 @@ technicalSkills:
 sideProjects:
   - name: zenoh
     position: core contributor
-    description: "Eclipse Zenoh — zero overhead pub/sub, store/query and compute protocol, adopted as a Tier 1 communication middleware in ROS 2. Maintainer of its multi-language bindings (C, C++, TypeScript, Java, Kotlin, Python, Go). Eclipse project membership: https://projects.eclipse.org/projects/iot.zenoh/who"
+    description: "Eclipse Zenoh — zero overhead pub/sub, store/query and compute protocol, adopted as a Tier 1 communication middleware in ROS 2. Maintainer of its multi-language bindings (C, C++, TypeScript, Java, Kotlin, Python, Go)."
     link: eclipse-zenoh/zenoh
     type: github
     langs: Rust
