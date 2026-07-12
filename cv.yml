@@ -5,7 +5,7 @@ person:
   profession: Senior Software Engineer — Rust / C++ / Systems Programming
   location: Orsay (91), France
   citizenship: FR
-  email: milyin@gmail.com
+  email: michael@ilyin.one
   site: https://github.com/milyin
   experience:
     years: 30
@@ -17,13 +17,13 @@ socialNetworks:
 
 abstract:
   - "Senior Software Engineer specializing in high-performance networking, low-level systems programming, and distributed architectures using Rust and C/C++."
-  - "Core contributor to the Eclipse Zenoh open-source protocol and maintainer of its multi-language bindings, including C, C++, TypeScript, Java, Kotlin, Python, and Go."
+  - "US patent holder with 30 years of industry experience. Core contributor to the Eclipse Zenoh open-source protocol, leading the team that maintains its multi-language API."
 
 career:
   - companyName: ZettaScale Labs
     duration: September 2022 - Present
     missions:
-      - position: Senior Rust Software Engineer
+      - position: Senior Rust Software Engineer / API Team Lead
         company: ZettaScale Labs
         location: Gif-sur-Yvette (91), France
         dates: September 2022 - Present
@@ -43,7 +43,7 @@ career:
           - Reworked and systematized the existing C binding. Eliminated intermittent memory crashes by designing a suite of Rust macros to guarantee correct sizing and alignment for stack-allocated structures across the FFI boundary.
           - Established a multiplatform, CMake-based build pipeline to streamline cross-platform compilation and deployment.
           - Drove the TypeScript binding to production readiness, implementing automated build workflows, comprehensive GUI examples, and 97% test coverage.
-          - Enhanced the stability and isolation of the dynamic-library-based plugin system.
+          - Eliminated crashes on plugin loading caused by Rust ABI instability in the dynamic-library-based plugin system.
 
   - companyName: DownStream Technologies
     duration: February 2015 - September 2022
@@ -63,7 +63,7 @@ career:
           - Eliminated recurring Microsoft Visual Studio build errors in rarely used configurations by restructuring the build files into a clean, hierarchical structure.
           - Automated product localization for Chinese and Japanese markets by developing a custom parser for Microsoft resource files (.rc).
           - Unified the shared GUI framework across separated engineering teams, enabling code reuse and eliminating uncoordinated, conflicting modifications.
-          - Led the team that designed and implemented a major shared component used by both applications.
+          - Led a team of 4 developers that designed and implemented the Bill of Materials (BOM) component for PCB design, shared between CAM350 and BluePrint.
 
   - companyName: AdLabs
     duration: October 2012 - January 2015
@@ -83,7 +83,8 @@ career:
           - RTB
         description:
           - Developed and deployed a real-time billing daemon capable of processing concurrent transactions across multiple platform services.
-          - Significantly reduced service response latency by implementing configurable parallelization of asynchronous requests based on a dependency graph.
+          - Significantly reduced banner-system response latency by using a dependency graph to parallelize previously sequential requests to third-party services.
+          - Second engagement with AdLabs — first worked with them in 2005 as a freelance Perl/XSLT web backend developer.
 
   - companyName: DownStream Technologies
     duration: June 2011 - October 2012
@@ -117,17 +118,18 @@ career:
           - Developed a complex, configurable property-editing component with multiple value representations.
           - Ported multiple GUI components of the application from MFC to wxWidgets.
 
-  - companyName: AdLabs
-    duration: June 2005 - December 2005
-    missions:
-      - position: Backend Developer (Perl/XSLT)
-        company: AdLabs
-        location: Moscow (Remote)
-        dates: June 2005 - December 2005
-        summary: Web backend development in Perl and XSLT.
-        technologies:
-          - Perl
-          - XSLT
+# Kept for history; folded into the 2012-2015 AdLabs entry as a bullet.
+#  - companyName: AdLabs
+#    duration: June 2005 - December 2005
+#    missions:
+#      - position: Backend Developer (Perl/XSLT)
+#        company: AdLabs
+#        location: Moscow (Remote)
+#        dates: June 2005 - December 2005
+#        summary: Web backend development in Perl and XSLT.
+#        technologies:
+#          - Perl
+#          - XSLT
 
   - companyName: Intel
     duration: January 1998 - June 2005
@@ -188,7 +190,7 @@ technicalSkills:
 sideProjects:
   - name: zenoh
     position: core contributor
-    description: "Eclipse Zenoh — zero overhead pub/sub, store/query and compute protocol, adopted as a Tier 1 communication middleware in ROS 2. Maintainer of its multi-language bindings (C, C++, TypeScript, Java, Kotlin, Python, Go)."
+    description: "Zero-overhead pub/sub, store/query and compute protocol — my primary project at ZettaScale Labs (see Work History)."
     link: eclipse-zenoh/zenoh
     type: github
     langs: Rust

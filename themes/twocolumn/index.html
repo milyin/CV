@@ -16,7 +16,7 @@
 
         <div class="main">
 
-          <h1 class="name">{{ .Person.Name }}</h1>
+          <h1 class="name">{{ .Person.Name }} <span class="name-alt">(Michael Ilyin)</span></h1>
           {{ if .Person.Profession }}<div class="profession">{{ .Person.Profession }}</div>{{ end }}
 
           {{- if .Abstract }}

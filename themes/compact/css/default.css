@@ -28,6 +28,12 @@ body {
   display: inline;
 }
 
+.name .name-alt {
+  font-size: 12px;
+  font-weight: normal;
+  color: #444;
+}
+
 .profession {
   font-size: 12px;
   color: #444;
