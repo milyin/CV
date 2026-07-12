@@ -1,0 +1,55 @@
+name: Build and publish CV
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  CVWONDER_VERSION: v0.10.1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install cvwonder
+        run: |
+          curl -fsSL -o /usr/local/bin/cvwonder \
+            "https://github.com/germainlefebvre4/cvwonder/releases/download/${CVWONDER_VERSION}/cvwonder_linux_amd64"
+          chmod +x /usr/local/bin/cvwonder
+          cvwonder version
+
+      # HTML only: the PDF is generated locally via scripts/generate-pdf.sh
+      - name: Generate HTML
+        run: cvwonder generate -i cv.yml -o generated/twocolumn -t twocolumn -f html
+
+      - name: Assemble site
+        run: |
+          mkdir site
+          cp -RL generated/twocolumn/* site/
+          cp site/cv.html site/index.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

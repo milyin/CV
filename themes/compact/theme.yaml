@@ -1,0 +1,12 @@
+---
+name: Compact
+slug: compact
+description: Dense single/two-page theme derived from the default theme
+author: Mikhail ILIN
+minimumVersion: 0.10.0
+configuration:
+  person:
+    anonymisation: false
+  socialNetworks:
+    display: true
+  displayContactInfo: true

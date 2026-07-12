@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Person.Name }}'s CV</title>
+    <meta name="author" content="{{ .Person.Name }}"/>
+    <meta name="description" content="{{ .Person.Name }}'s CV"/>
+    <link href="/css/default.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="header">
+        <div class="header-main">
+          <h1 class="name">{{ .Person.Name }}</h1>
+          <div class="profession">{{ .Person.Profession }}</div>
+        </div>
+        <div class="contact">
+          {{ if .Person.Email }}<span>{{ .Person.Email }}</span>{{ end }}
+          {{ if .Person.Phone }}<span>{{ .Person.Phone }}</span>{{ end }}
+          {{ if .Person.Location }}<span>{{ .Person.Location }}</span>{{ end }}
+          {{ if .SocialNetworks }}{{ if .SocialNetworks.Github }}<span>github.com/{{ .SocialNetworks.Github }}</span>{{ end }}{{ if .SocialNetworks.Linkedin }}<span>linkedin.com/in/{{ .SocialNetworks.Linkedin }}</span>{{ end }}{{ end }}
+        </div>
+      </div>
+
+      {{- if .Abstract }}
+      <div class="abstract">
+        {{ range .Abstract }}<p>{{ . }}</p>{{ end }}
+      </div>
+      {{- end }}
+
+      {{- if .Career }}
+      <h2>Expérience</h2>
+      {{ range .Career }}
+        {{ range .Missions }}
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">{{ .Position }} — {{ .Company }}</span>
+            <span class="job-meta">{{ .Location }} · {{ .Dates }}</span>
+          </div>
+          {{ if .Summary }}<p class="job-summary">{{ .Summary }}</p>{{ end }}
+          {{ $length := len .Description }}{{ if gt $length 0 }}
+          <ul>
+            {{ range .Description }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+          {{ if .Technologies }}<div class="job-tech">{{ join .Technologies " · " }}</div>{{ end }}
+        </div>
+        {{ end }}
+      {{ end }}
+      {{- end }}
+
+      {{- if .TechnicalSkills }}
+      {{- $length := len .TechnicalSkills.Domains }}
+      {{- if gt $length 0 }}
+      <h2>Compétences</h2>
+      <div class="skills">
+        {{ range .TechnicalSkills.Domains }}
+        <div class="skill-line"><b>{{ .Name }} :</b>
+          {{ $first := true }}{{ range .Competencies }}{{ if $first }}{{ $first = false }}{{ else }} · {{ end }}{{ .Name }}{{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{- end }}
+      {{- end }}
+
+      {{- if .SideProjects }}
+      <h2>Projets open source</h2>
+      <div class="projects">
+        {{ range .SideProjects }}
+        <div class="project">
+          <b>{{ .Name }}</b> <span class="project-pos">({{ .Position }})</span> — {{ .Description }}
+          <span class="project-link">github.com/{{ .Link }}</span>
+        </div>
+        {{ end }}
+      </div>
+      {{- end }}
+
+      {{- if .Certifications }}
+      <h2>Brevets &amp; certifications</h2>
+      <div class="certifications">
+        {{ range .Certifications }}
+        <div class="certification">
+          <b>{{ .CertificationName }}</b> — {{ .Issuer }}, {{ .Date }}
+          {{ if .Link }}<span class="project-link">{{ .Link }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{- end }}
+
+      <div class="bottom">
+        {{- if .Education }}
+        <div class="bottom-block">
+          <h2>Formation</h2>
+          {{ range .Education }}
+          <div class="education">
+            <b>{{ .Degree }}</b><br/>
+            {{ .SchoolName }}, {{ .Location }} · {{ .Dates }}
+          </div>
+          {{ end }}
+        </div>
+        {{- end }}
+
+        {{- if .Languages }}
+        <div class="bottom-block">
+          <h2>Langues</h2>
+          {{ $first := true }}{{ range .Languages }}{{ if $first }}{{ $first = false }}{{ else }} · {{ end }}<span><b>{{ .Name }}</b> ({{ .Level }})</span>{{ end }}
+        </div>
+        {{- end }}
+      </div>
+
+    </div>
+  </body>
+</html>

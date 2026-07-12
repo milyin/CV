@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Person.Name }}'s CV</title>
+    <meta name="author" content="{{ .Person.Name }}"/>
+    <meta name="description" content="{{ .Person.Name }}'s CV"/>
+    <link href="css/default.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="columns">
+
+        <div class="main">
+
+          <h1 class="name">{{ .Person.Name }}</h1>
+          {{ if .Person.Profession }}<div class="profession">{{ .Person.Profession }}</div>{{ end }}
+
+          {{- if .Abstract }}
+          <h2>Professional Summary</h2>
+          <div class="block">
+            {{ range .Abstract }}<p>{{ . }}</p>{{ end }}
+          </div>
+          {{- end }}
+
+          {{- if .Career }}
+          <h2>Work History</h2>
+          <div class="block">
+            {{ range .Career }}
+              {{ range .Missions }}
+              <div class="job">
+                <div class="job-line1"><span class="job-title">{{ .Position }}</span>, {{ .Dates }}</div>
+                <div class="job-line2"><b>{{ .Company }}</b> - {{ .Location }}</div>
+                {{ if .Summary }}<p class="job-summary">{{ .Summary }}</p>{{ end }}
+                {{ $length := len .Description }}{{ if gt $length 0 }}
+                <ul>
+                  {{ range .Description }}<li>{{ . }}</li>{{ end }}
+                </ul>
+                {{ end }}
+                {{ if .Technologies }}<div class="job-tech">{{ join .Technologies " · " }}</div>{{ end }}
+              </div>
+              {{ end }}
+            {{ end }}
+          </div>
+          {{- end }}
+
+        </div>
+
+        <div class="sidebar">
+
+          {{ if .Person.Depiction }}<img class="photo" src="{{ .Person.Depiction }}" alt="{{ .Person.Name }}">{{ end }}
+
+          <h2>Contact</h2>
+          <div class="block side-block">
+            {{ if .Person.Location }}<div><b>Address:</b> {{ .Person.Location }}</div>{{ end }}
+            {{ if .Person.Phone }}<div><b>Phone:</b> {{ .Person.Phone }}</div>{{ end }}
+            {{ if .Person.Email }}<div><b>Email:</b> {{ .Person.Email }}</div>{{ end }}
+            {{ if .SocialNetworks }}
+              {{ if .SocialNetworks.Github }}<div><b>GitHub:</b> github.com/{{ .SocialNetworks.Github }}</div>{{ end }}
+              {{ if .SocialNetworks.Linkedin }}<div><b>LinkedIn:</b> linkedin.com/in/{{ .SocialNetworks.Linkedin }}</div>{{ end }}
+            {{ end }}
+          </div>
+
+          {{- if .TechnicalSkills }}
+          {{- $length := len .TechnicalSkills.Domains }}
+          {{- if gt $length 0 }}
+          <h2>Skills</h2>
+          <div class="block side-block">
+            {{ range .TechnicalSkills.Domains }}
+            <div class="skill-domain">{{ .Name }}</div>
+            <ul>
+              {{ range .Competencies }}<li>{{ .Name }}</li>{{ end }}
+            </ul>
+            {{ end }}
+          </div>
+          {{- end }}
+          {{- end }}
+
+          {{- if .Education }}
+          <h2>Education</h2>
+          <div class="block side-block">
+            {{ range .Education }}
+            <div class="education">
+              {{ .Degree }}, {{ .Dates }}<br/>
+              <b>{{ .SchoolName }}</b> - {{ .Location }}
+            </div>
+            {{ end }}
+          </div>
+          {{- end }}
+
+          {{- if .SideProjects }}
+          <h2>Open Source Projects</h2>
+          <div class="block side-block">
+            {{ range .SideProjects }}
+            <div class="project">
+              <b>{{ .Name }}</b> <span class="muted">({{ .Position }})</span> — {{ .Description }}
+              <div class="muted small">github.com/{{ .Link }}</div>
+            </div>
+            {{ end }}
+          </div>
+          {{- end }}
+
+          {{- if .Certifications }}
+          <h2>Patents</h2>
+          <div class="block side-block">
+            <ul>
+              {{ range .Certifications }}{{ if eq .CompanyName "USPTO" }}
+              <li>{{ .CertificationName }} — {{ .Issuer }}, {{ .Date }}</li>
+              {{ end }}{{ end }}
+            </ul>
+          </div>
+
+          <h2>Certifications</h2>
+          <div class="block side-block">
+            <ul>
+              {{ range .Certifications }}{{ if ne .CompanyName "USPTO" }}
+              <li>{{ .CertificationName }} — {{ .Issuer }}, {{ .Date }}</li>
+              {{ end }}{{ end }}
+            </ul>
+          </div>
+          {{- end }}
+
+          {{- if .Languages }}
+          <h2>Languages</h2>
+          <div class="block side-block">
+            <ul>
+              {{ range .Languages }}<li><b>{{ .Name }}</b> — {{ .Level }}</li>{{ end }}
+            </ul>
+          </div>
+          {{- end }}
+
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+---
+name: Two Column
+slug: twocolumn
+description: Two-column resume theme with sidebar (contact, skills, education), no photo
+author: Mikhail ILIN
+minimumVersion: 0.10.0
+configuration:
+  person:
+    anonymisation: false
+  socialNetworks:
+    display: true
+  displayContactInfo: true

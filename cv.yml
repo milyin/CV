@@ -1,0 +1,237 @@
+---
+person:
+  name: Mikhail ILIN
+  depiction: images/profile.jpg
+  profession: Senior Software Engineer — Rust / C++ / Systems Programming
+  location: Orsay (91), France
+  citizenship: FR
+  email: milyin@gmail.com
+  site: https://github.com/milyin
+  experience:
+    years: 30
+    since: 1996
+
+socialNetworks:
+  github: milyin
+  linkedin: michael-ilyin
+
+abstract:
+  - "Senior Software Engineer specializing in high-performance networking, low-level systems programming, and distributed architectures using Rust and C/C++."
+  - "Core contributor to the Eclipse Zenoh open-source protocol and maintainer of its multi-language bindings, including C, C++, TypeScript, Java, Kotlin, Python, and Go."
+
+career:
+  - companyName: ZettaScale Labs
+    duration: September 2022 - Present
+    missions:
+      - position: Senior Rust Software Engineer
+        company: ZettaScale Labs
+        location: Gif-sur-Yvette (91), France
+        dates: September 2022 - Present
+        summary: Core developer of Zenoh, an open-source network library written in Rust and adopted as a Tier 1 communication middleware in ROS 2. Led the team responsible for aligning APIs across Rust, C, C++, Python, TypeScript, Kotlin, Java and Go.
+        technologies:
+          - Rust
+          - C
+          - C++
+          - CMake
+          - JNI / Kotlin / Java
+          - TypeScript
+          - Python
+          - GitHub Actions
+        description:
+          - Implemented automatic generation of the JNI wrapper exposing the zenoh library to Java and Kotlin; the generated code is 1.87 times faster than the manually written original.
+          - Architected and implemented the high-performance C++ library binding from scratch.
+          - Reworked and systematized the existing C binding. Eliminated intermittent memory crashes by designing a suite of Rust macros to guarantee correct sizing and alignment for stack-allocated structures across the FFI boundary.
+          - Established a multiplatform, CMake-based build pipeline to streamline cross-platform compilation and deployment.
+          - Drove the TypeScript binding to production readiness, implementing automated build workflows, comprehensive GUI examples, and 97% test coverage.
+          - Enhanced the stability and isolation of the dynamic-library-based plugin system.
+
+  - companyName: DownStream Technologies
+    duration: February 2015 - September 2022
+    missions:
+      - position: Senior C++ Engineer / Technical Lead
+        company: DownStream Technologies
+        location: Marlborough, MA (Remote)
+        dates: February 2015 - September 2022
+        summary: Returned to DownStream Technologies. Maintained and developed core components across the entire GUI product suite, including CAM350 (a specialized CAM system for PCB manufacturing) and BluePrint (a PCB documentation authoring tool).
+        technologies:
+          - C++
+          - MFC
+          - Win32
+          - Visual Studio
+        description:
+          - Architected and executed a major codebase modernization, successfully migrating a massive, legacy codebase (dating back to 1994) from 32-bit to 64-bit architecture and from 8-bit ASCII to Unicode.
+          - Eliminated recurring Microsoft Visual Studio build errors in rarely used configurations by restructuring the build files into a clean, hierarchical structure.
+          - Automated product localization for Chinese and Japanese markets by developing a custom parser for Microsoft resource files (.rc).
+          - Unified the shared GUI framework across separated engineering teams, enabling code reuse and eliminating uncoordinated, conflicting modifications.
+          - Led the team that designed and implemented a major shared component used by both applications.
+
+  - companyName: AdLabs
+    duration: October 2012 - January 2015
+    missions:
+      - position: Linux Backend C/C++ Developer
+        company: AdLabs
+        location: Moscow (Remote)
+        dates: October 2012 - January 2015
+        summary: Developed and maintained a high-throughput digital advertising platform written in pure C on an asynchronous, event-driven architecture (libevent). Engineered low-level system optimizations under Linux, including shared memory access, network socket tuning, and high-performance scripting pipelines streaming data dumps from PostgreSQL directly into shared memory.
+        technologies:
+          - C
+          - C++
+          - Linux
+          - libevent
+          - PostgreSQL
+          - Shared memory
+          - RTB
+        description:
+          - Developed and deployed a real-time billing daemon capable of processing concurrent transactions across multiple platform services.
+          - Significantly reduced service response latency by implementing configurable parallelization of asynchronous requests based on a dependency graph.
+
+  - companyName: DownStream Technologies
+    duration: June 2011 - October 2012
+    missions:
+      - position: Windows Desktop C++ Developer
+        company: DownStream Technologies
+        location: Marlborough, MA (Remote)
+        dates: June 2011 - October 2012
+        summary: Developer on the BluePrint application team.
+        technologies:
+          - C++
+          - Windows
+          - PDF
+          - TrueType
+        description:
+          - Reworked PDF export to support Japanese and Chinese languages, solving Windows font-naming issues that required binary parsing of TrueType font files.
+
+  - companyName: Bricsys
+    duration: January 2006 - June 2011
+    missions:
+      - position: Windows Desktop C++ Developer
+        company: Bricsys
+        location: Ghent (Remote)
+        dates: January 2006 - June 2011
+        summary: Developed the BricsCAD application; responsible for GUI components and printing support.
+        technologies:
+          - C++
+          - MFC
+          - wxWidgets
+        description:
+          - Developed a complex, configurable property-editing component with multiple value representations.
+          - Ported multiple GUI components of the application from MFC to wxWidgets.
+
+  - companyName: AdLabs
+    duration: June 2005 - December 2005
+    missions:
+      - position: Backend Developer (Perl/XSLT)
+        company: AdLabs
+        location: Moscow (Remote)
+        dates: June 2005 - December 2005
+        summary: Web backend development in Perl and XSLT.
+        technologies:
+          - Perl
+          - XSLT
+
+  - companyName: Intel
+    duration: January 1998 - June 2005
+    missions:
+      - position: C++ developer — MPEG Processing Library
+        company: Intel
+        location: Nizhny Novgorod
+        dates: January 1998 - June 2005
+        summary: Engineered an optimized protocol for video transmission over packet-loss networks.
+        technologies:
+          - C++
+          - Video codecs
+          - Reed–Solomon
+          - Networking
+        description:
+          - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients.
+          - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm (https://patents.google.com/patent/US7584404B2).
+      - position: System administrator and developer — VTune Profiler testing laboratory
+        company: Intel
+        location: Nizhny Novgorod
+        dates: January 1998 - June 2005
+        summary: System administrator and developer in a testing laboratory.
+        technologies:
+          - Test automation
+          - OS deployment
+        description:
+          - Developed and maintained a test execution system with automatic OS image installation, remote control of test computers, and a booking system for developers.
+
+  - companyName: Regional Depository of the Nizhny Novgorod Region
+    duration: 1996 - January 1998
+    missions:
+      - position: Database Developer
+        company: Regional Depository of the Nizhny Novgorod Region
+        location: Nizhny Novgorod
+        dates: 1996 - January 1998
+        summary: Developed and maintained the database system of the regional securities depository, keeping the registry of stock share ownership.
+        technologies:
+          - Microsoft FoxPro
+
+technicalSkills:
+  domains:
+    - name: Languages
+      competencies:
+        - name: Rust
+        - name: C++
+        - name: C
+        - name: TypeScript
+        - name: Python
+        - name: SQL
+    - name: Tools & Build
+      competencies:
+        - name: CMake
+        - name: Git
+        - name: GitHub Actions
+    - name: Domains
+      competencies:
+        - name: FFI & language bindings
+        - name: High-performance networking
+        - name: Distributed systems
+        - name: Desktop GUI (Windows)
+
+sideProjects:
+  - name: zenoh
+    position: core contributor
+    description: "Eclipse Zenoh — zero overhead pub/sub, store/query and compute protocol, adopted as a Tier 1 communication middleware in ROS 2. Maintainer of its multi-language bindings (C, C++, TypeScript, Java, Kotlin, Python, Go). Eclipse project membership: https://projects.eclipse.org/projects/iot.zenoh/who"
+    link: eclipse-zenoh/zenoh
+    type: github
+    langs: Rust
+    color: dea584
+
+  - name: prebindgen
+    position: personal
+    description: A developer tool that automates proxying a Rust FFI library to multiple native language bindings.
+    link: milyin/prebindgen
+    type: github
+    langs: Rust
+    color: dea584
+
+  - name: zbobr
+    position: personal
+    description: An LLM agent dispatcher automating development workflows through a GitHub interface. Used in real projects before equivalent features appeared in Claude Code and GitHub Copilot.
+    link: milyin/zbobr
+    type: github
+    langs: Rust
+    color: dea584
+
+certifications:
+  - companyName: USPTO
+    certificationName: US Patent 7,584,404 — Method and apparatus for multimedia communication over packet channels
+    issuer: United States Patent and Trademark Office
+    date: Filed 2002, granted 2009
+    link: https://patents.google.com/patent/US7584404B2
+
+languages:
+  - name: Russian
+    level: Native
+  - name: English
+    level: Professional proficiency
+  - name: French
+    level: Intermediate
+
+education:
+  - schoolName: Nizhny Novgorod State University, Mechanic and Mathematical faculty
+    degree: Master's degree in Mathematics and Computer Science
+    location: Nizhny Novgorod
+    dates: September 1992 - May 2000
+    link: http://www.unn.ru/
