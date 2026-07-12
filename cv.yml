@@ -41,7 +41,7 @@ career:
           - Python
           - GitHub Actions
         description:
-          - Implemented automatic generation of the JNI wrapper exposing the zenoh library to Java and Kotlin; the generated code is 1.87 times faster than the manually written original.
+          - Implemented automatic generation of the optimized JNI wrapper replacing previous manually written Java/Kotlin bindings. The measured throughput was increased by 1.87x.
           - Architected and implemented the high-performance C++ library binding from scratch.
           - Reworked and systematized the existing C binding. Eliminated intermittent memory crashes by designing a suite of Rust macros to guarantee correct sizing and alignment for stack-allocated structures across the FFI boundary.
           - Established a multiplatform, CMake-based build pipeline to streamline cross-platform compilation and deployment.
