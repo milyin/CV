@@ -104,23 +104,29 @@
           {{- end }}
 
           {{- if .Certifications }}
+          {{- $hasPatents := false }}{{- $hasCerts := false }}
+          {{- range .Certifications }}{{ if eq .CompanyName "USPTO" }}{{ $hasPatents = true }}{{ else }}{{ $hasCerts = true }}{{ end }}{{ end }}
+          {{- if $hasPatents }}
           <h2>Patents</h2>
           <div class="block side-block">
             <ul>
               {{ range .Certifications }}{{ if eq .CompanyName "USPTO" }}
-              <li>{{ .CertificationName }} — {{ .Issuer }}, {{ .Date }}</li>
+              <li>{{ if .Link }}<a href="{{ .Link }}">{{ .CertificationName }}</a>{{ else }}{{ .CertificationName }}{{ end }} — {{ .Issuer }}, {{ .Date }}</li>
               {{ end }}{{ end }}
             </ul>
           </div>
+          {{- end }}
 
+          {{- if $hasCerts }}
           <h2>Certifications</h2>
           <div class="block side-block">
             <ul>
               {{ range .Certifications }}{{ if ne .CompanyName "USPTO" }}
-              <li>{{ .CertificationName }} — {{ .Issuer }}, {{ .Date }}</li>
+              <li>{{ if .Link }}<a href="{{ .Link }}">{{ .CertificationName }}</a>{{ else }}{{ .CertificationName }}{{ end }} — {{ .Issuer }}, {{ .Date }}</li>
               {{ end }}{{ end }}
             </ul>
           </div>
+          {{- end }}
           {{- end }}
 
           {{- if .Languages }}

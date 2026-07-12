@@ -144,7 +144,7 @@ career:
           - Networking
         description:
           - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients.
-          - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm (https://patents.google.com/patent/US7584404B2).
+          - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm (https://patents.google.com/patent/US7584404B2/zh).
       - position: System administrator and developer — VTune Profiler testing laboratory
         company: Intel
         location: Nizhny Novgorod
@@ -219,7 +219,7 @@ certifications:
     certificationName: US Patent 7,584,404 — Method and apparatus for multimedia communication over packet channels
     issuer: United States Patent and Trademark Office
     date: Filed 2002, granted 2009
-    link: https://patents.google.com/patent/US7584404B2
+    link: https://patents.google.com/patent/US7584404B2/zh
 
 languages:
   - name: Russian
