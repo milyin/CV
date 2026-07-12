@@ -132,29 +132,25 @@ career:
   - companyName: Intel
     duration: January 1998 - June 2005
     missions:
-      - position: C++ developer — MPEG Processing Library
+      - position: C++ Developer — MPEG Processing Library
         company: Intel
         location: Nizhny Novgorod
         dates: January 1998 - June 2005
-        summary: Engineered an optimized protocol for video transmission over packet-loss networks.
+        summary: Engineered an optimized protocol for video transmission over packet-loss networks. In parallel, served as system administrator and developer of the VTune Profiler testing laboratory.
         technologies:
           - C++
           - Video codecs
           - Reed–Solomon
           - Networking
-        description:
-          - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients.
-          - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm (https://patents.google.com/patent/US7584404B2/zh).
-      - position: System administrator and developer — VTune Profiler testing laboratory
-        company: Intel
-        location: Nizhny Novgorod
-        dates: January 1998 - June 2005
-        summary: System administrator and developer in a testing laboratory.
-        technologies:
+          - Perl
+          - XSLT
+          - JavaScript
           - Test automation
           - OS deployment
         description:
-          - Developed and maintained a test execution system with automatic OS image installation, remote control of test computers, and a booking system for developers.
+          - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients.
+          - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm (https://patents.google.com/patent/US7584404B2/zh).
+          - Developed and maintained a test computer booking and OS image installation system with remote control of test computers. Its web interface used dynamic page modification before this approach became popular.
 
   - companyName: Regional Depository of the Nizhny Novgorod Region
     duration: 1996 - January 1998
