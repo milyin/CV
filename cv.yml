@@ -16,8 +16,9 @@ socialNetworks:
   linkedin: michael-ilyin
 
 abstract:
-  - "Senior Software Engineer specializing in high-performance networking, low-level systems programming, and distributed architectures using Rust and C/C++."
-  - "US patent holder with 30 years of industry experience. Core contributor to the Eclipse Zenoh open-source protocol, leading the team that maintains its multi-language API."
+  - "Systems software engineer with 30 years of experience in Rust, C++ and C, spanning network middleware, high-load backends, video transmission and desktop CAD/CAM applications."
+  - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; leads the team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin, Java and Go."
+  - "Expert in FFI and cross-language API design; holder of US Patent 7,584,404 for error correction in multimedia streaming over packet-loss networks."
 
 career:
   - companyName: ZettaScale Labs
