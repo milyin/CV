@@ -18,8 +18,8 @@ socialNetworks:
   linkedin: michael-ilyin
 
 abstract:
-  - "Systems software engineer with 25+ years of experience in C++ and C, and experience in Rust since 2017, spanning network middleware, high-load backends, video transmission and desktop CAD/CAM applications."
-  - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; led the team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin and Java."
+  - "Systems software engineer with 25+ years in C/C++ and Rust since 2017, spanning network middleware, high-load backends, video transmission and desktop CAD/CAM applications."
+  - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; led its cross-language API team."
   - "Expert in FFI and cross-language API design; holder of US Patent 7,584,404 for error correction in multimedia streaming over packet-loss networks."
 
 career:
@@ -30,7 +30,7 @@ career:
         company: ZettaScale Labs
         location: Gif-sur-Yvette (91), France
         dates: September 2022 - Present
-        summary: Core developer of Zenoh, an open-source network library written in Rust and adopted as a Tier 1 communication middleware in ROS 2. Led the team of 5 engineers responsible for aligning APIs across Rust, C, C++, Python, TypeScript, Kotlin and Java.
+        summary: Core developer of Zenoh, an open-source network protocol library written in Rust. Led the team of 5 engineers aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin and Java.
         technologies:
           - Rust
           - C
@@ -41,12 +41,12 @@ career:
           - Python
           - GitHub Actions
         description:
-          - Implemented automatic generation of the optimized JNI wrapper replacing previous manually written Java/Kotlin bindings. The measured throughput was increased by 1.87x.
+          - Reworked the C binding, eliminating intermittent memory crashes with a suite of Rust macros that guarantee correct sizing and alignment of stack-allocated structures across the FFI boundary.
           - Architected and implemented the high-performance C++ library binding from scratch.
-          - Reworked and systematized the existing C binding. Eliminated intermittent memory crashes by designing a suite of Rust macros to guarantee correct sizing and alignment for stack-allocated structures across the FFI boundary.
-          - Established a multiplatform, CMake-based build pipeline to streamline cross-platform compilation and deployment.
-          - Drove the TypeScript binding to production readiness, implementing automated build workflows, comprehensive GUI examples, and 97% test coverage.
-          - Eliminated crashes on plugin loading caused by Rust ABI instability in the dynamic-library-based plugin system.
+          - Automated generation of the JNI wrapper, replacing the manually written Java/Kotlin bindings and increasing measured throughput 1.87x.
+          - Drove the TypeScript binding to production readiness with automated build workflows, GUI examples, and 97% test coverage.
+          - Eliminated plugin-loading crashes caused by Rust ABI instability in the dynamic-library plugin system.
+          - Established a CMake-based multiplatform build and deployment pipeline.
 
   - companyName: DownStream Technologies
     duration: February 2015 - September 2022
@@ -55,18 +55,18 @@ career:
         company: DownStream Technologies
         location: Marlborough, MA (Remote)
         dates: February 2015 - September 2022
-        summary: Maintained and developed core components across the entire GUI product suite, including CAM350 (a specialized CAM system for PCB manufacturing) and BluePrint (a PCB documentation authoring tool).
+        summary: Rehired to develop core components of CAM350 (a CAM system for PCB manufacturing) and BluePrint (a PCB documentation authoring tool).
         technologies:
           - C++
           - MFC
           - Win32
           - Visual Studio
         description:
-          - Architected and executed a major codebase modernization, successfully migrating a massive, legacy codebase (dating back to 1994) from 32-bit to 64-bit architecture and from 8-bit ASCII to Unicode.
-          - Eliminated recurring Microsoft Visual Studio build errors in rarely used configurations by restructuring the build files into a clean, hierarchical structure.
-          - Automated product localization for Chinese and Japanese markets by developing a custom parser for Microsoft resource files (.rc).
-          - Unified the shared GUI framework across separated engineering teams, enabling code reuse and eliminating uncoordinated, conflicting modifications.
-          - Led a team of 4 developers that designed and implemented the Bill of Materials (BOM) component for PCB design, shared between CAM350 and BluePrint.
+          - Migrated a massive legacy codebase (dating back to 1994) from 32-bit to 64-bit architecture and from 8-bit ASCII to Unicode.
+          - Eliminated recurring Visual Studio build errors in rarely used configurations by restructuring the project files hierarchically.
+          - Automated localization for Chinese and Japanese markets with a custom parser for Microsoft .rc resource files.
+          - Unified the shared GUI framework across separate engineering teams, enabling code reuse and eliminating conflicting modifications.
+          - Led a team of 4 developers designing and implementing the Bill of Materials (BOM) component shared between CAM350 and BluePrint.
 
   - companyName: AdLabs
     duration: October 2012 - January 2015
@@ -75,7 +75,7 @@ career:
         company: AdLabs
         location: Moscow (Remote)
         dates: October 2012 - January 2015
-        summary: Developed and maintained a high-throughput digital advertising platform written in pure C on an asynchronous, event-driven architecture (libevent). This was a second engagement with AdLabs — first worked with them in 2005 as a freelance Perl/XSLT web backend developer.
+        summary: Developed a high-throughput advertising platform in pure C (libevent, event-driven); second engagement after freelance Perl/XSLT work in 2005.
         technologies:
           - C
           - C++
@@ -85,8 +85,8 @@ career:
           - Shared memory
           - RTB
         description:
-          - Developed and deployed a real-time billing daemon capable of processing concurrent transactions across multiple platform services.
-          - 3x-4x times accelerated banner-system response by using a dependency graph to parallelize previously sequential requests to third-party services.
+          - Built and deployed a real-time billing daemon processing concurrent transactions across multiple platform services.
+          - Accelerated banner-system response 3-4x by parallelizing previously sequential third-party requests via a dependency graph.
 
   - companyName: DownStream Technologies
     duration: June 2011 - October 2012
@@ -95,7 +95,6 @@ career:
         company: DownStream Technologies
         location: Marlborough, MA (Remote)
         dates: June 2011 - October 2012
-        summary: Developer on the BluePrint application team.
         technologies:
           - C++
           - Windows
@@ -111,15 +110,15 @@ career:
         company: Bricsys
         location: Ghent (Remote)
         dates: January 2006 - June 2011
-        summary: Developed the BricsCAD application; responsible for GUI components and printing support.
+        summary: Developed GUI components and printing support for BricsCAD.
         technologies:
           - C++
           - MFC
           - wxWidgets
         description:
-          - Developed a complex, configurable property-editing component with multiple value representations.
-          - Was responsible for the printing subsystem, including the implementation of a custom print preview control.
-          - Ported multiple GUI components of the application from MFC to wxWidgets.
+          - Built a configurable property-editing component with multiple value representations.
+          - Owned the printing subsystem, including a custom print-preview control.
+          - Ported multiple GUI components from MFC to wxWidgets.
 
 # Kept for history; folded into the 2012-2015 AdLabs entry as a bullet.
 #  - companyName: AdLabs
@@ -137,11 +136,11 @@ career:
   - companyName: Intel
     duration: January 1998 - June 2005
     missions:
-      - position: C++ Developer — MPEG Processing Library, VTune Profiler
+      - position: C++ Developer
         company: Intel
         location: Nizhny Novgorod
         dates: January 1998 - June 2005
-        summary: Engineered the video encoding / decoding library optimized for Intel CPUs. Then served as system administrator and developer of the VTune Profiler testing laboratory.
+        summary: Engineered the MPEG video encoding/decoding library optimized for Intel CPUs; later developed and administered the VTune Profiler testing laboratory.
         technologies:
           - C++
           - Video codecs
@@ -150,8 +149,8 @@ career:
           - XSLT
           - JavaScript
         description:
-          - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients, received US patent for it
-          - Developed and maintained a test computer booking and OS image installation system with remote control of test computers; built its dynamic web interface in the early 2000s, before AJAX became mainstream.
+          - Invented an algorithm applying Reed–Solomon error correction to Fourier transform coefficients; granted US Patent 7,584,404.
+          - Built a test-machine booking and OS-image installation system with remote control; its dynamic web interface predated mainstream AJAX.
 
   # - companyName: Regional Depository of the Nizhny Novgorod Region
   #   duration: 1996 - January 1998
@@ -177,7 +176,6 @@ technicalSkills:
     - name: Tools & Build
       competencies:
         - name: CMake
-        - name: Git
         - name: GitHub Actions
     - name: Domains
       competencies:
@@ -188,6 +186,7 @@ technicalSkills:
         - name: Distributed systems
         - name: Cross-platform (Linux / macOS / Windows)
         - name: Desktop GUI (Windows)
+        - name: LLM & agent tooling
 
 sideProjects:
   # Description lines after the first follow the "Label: URL" form and are
@@ -213,7 +212,7 @@ sideProjects:
   - name: zbobr
     position: personal
     description: |-
-      A state-machine LLM agent dispatcher that uses GitHub issues to keep task context. 
+      A state-machine LLM agent dispatcher that uses GitHub issues to keep task context.
       Example tasks: https://github.com/milyin-zenoh-zbobr/tasks/issues
     link: milyin/zbobr
     type: github
