@@ -10,15 +10,15 @@ person:
   email: michael@ilyin.one
   site: https://github.com/milyin
   experience:
-    years: 30
-    since: 1996
+    years: 28
+    since: 1998
 
 socialNetworks:
   github: milyin
   linkedin: michael-ilyin
 
 abstract:
-  - "Systems software engineer with 30 years of experience in Rust, C++ and C, spanning network middleware, high-load backends, video transmission and desktop CAD/CAM applications."
+  - "Systems software engineer with 25+ years of experience in C++ and C, and experience in Rust since 2017, spanning network middleware, high-load backends, video transmission and desktop CAD/CAM applications."
   - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; led the team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin, Java and Go."
   - "Expert in FFI and cross-language API design; holder of US Patent 7,584,404 for error correction in multimedia streaming over packet-loss networks."
 
@@ -156,16 +156,16 @@ career:
           - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm.
           - Developed and maintained a test computer booking and OS image installation system with remote control of test computers; built its dynamic web interface in the early 2000s, before AJAX became mainstream.
 
-  - companyName: Regional Depository of the Nizhny Novgorod Region
-    duration: 1996 - January 1998
-    missions:
-      - position: Database Developer
-        company: Regional Depository of the Nizhny Novgorod Region
-        location: Nizhny Novgorod
-        dates: 1996 - January 1998
-        summary: Developed and maintained the database system of the regional securities depository, keeping the registry of stock share ownership.
-        technologies:
-          - Microsoft FoxPro
+  # - companyName: Regional Depository of the Nizhny Novgorod Region
+  #   duration: 1996 - January 1998
+  #   missions:
+  #     - position: Database Developer
+  #       company: Regional Depository of the Nizhny Novgorod Region
+  #       location: Nizhny Novgorod
+  #       dates: 1996 - January 1998
+  #       summary: Developed and maintained the database system of the regional securities depository, keeping the registry of stock share ownership.
+  #       technologies:
+  #         - Microsoft FoxPro
 
 technicalSkills:
   domains:
