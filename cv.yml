@@ -102,7 +102,7 @@ career:
           - PDF
           - TrueType
         description:
-          - Reworked PDF export to support Japanese and Chinese languages, solving Windows font-naming issues that required binary parsing of TrueType font files.
+          - Reworked PDF export to support Japanese and Chinese languages, solving Windows font-naming issues by binary parsing of TrueType font files.
 
   - companyName: Bricsys
     duration: January 2006 - June 2011
@@ -118,6 +118,7 @@ career:
           - wxWidgets
         description:
           - Developed a complex, configurable property-editing component with multiple value representations.
+          - Was responsible for the printing subsystem, including the implementation of a custom print preview control.
           - Ported multiple GUI components of the application from MFC to wxWidgets.
 
 # Kept for history; folded into the 2012-2015 AdLabs entry as a bullet.
@@ -140,20 +141,16 @@ career:
         company: Intel
         location: Nizhny Novgorod
         dates: January 1998 - June 2005
-        summary: Engineered an optimized protocol for video transmission over packet-loss networks. In parallel, served as system administrator and developer of the VTune Profiler testing laboratory.
+        summary: Engineered the video encoding / decoding library optimized for Intel CPUs. Then served as system administrator and developer of the VTune Profiler testing laboratory.
         technologies:
           - C++
           - Video codecs
-          - Reed–Solomon
           - Networking
           - Perl
           - XSLT
           - JavaScript
-          - Test automation
-          - OS deployment
         description:
-          - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients.
-          - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm.
+          - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients, received US patent for it
           - Developed and maintained a test computer booking and OS image installation system with remote control of test computers; built its dynamic web interface in the early 2000s, before AJAX became mainstream.
 
   # - companyName: Regional Depository of the Nizhny Novgorod Region
