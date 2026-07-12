@@ -149,7 +149,7 @@ career:
           - OS deployment
         description:
           - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients.
-          - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm (https://patents.google.com/patent/US7584404B2/zh).
+          - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm.
           - Developed and maintained a test computer booking and OS image installation system with remote control of test computers. Its web interface used dynamic page modification before this approach became popular.
 
   - companyName: Regional Depository of the Nizhny Novgorod Region
