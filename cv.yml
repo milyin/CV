@@ -17,7 +17,7 @@ socialNetworks:
 
 abstract:
   - "Systems software engineer with 30 years of experience in Rust, C++ and C, spanning network middleware, high-load backends, video transmission and desktop CAD/CAM applications."
-  - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; leads the team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin, Java and Go."
+  - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; led the team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin, Java and Go."
   - "Expert in FFI and cross-language API design; holder of US Patent 7,584,404 for error correction in multimedia streaming over packet-loss networks."
 
 career:
@@ -73,7 +73,7 @@ career:
         company: AdLabs
         location: Moscow (Remote)
         dates: October 2012 - January 2015
-        summary: Developed and maintained a high-throughput digital advertising platform written in pure C on an asynchronous, event-driven architecture (libevent). Engineered low-level system optimizations under Linux, including shared memory access, network socket tuning, and high-performance scripting pipelines streaming data dumps from PostgreSQL directly into shared memory.
+        summary: Developed and maintained a high-throughput digital advertising platform written in pure C on an asynchronous, event-driven architecture (libevent). Engineered low-level system optimizations under Linux, including shared memory access, network socket tuning, and high-performance scripting pipelines streaming data dumps from PostgreSQL directly into shared memory. Second engagement with AdLabs — first worked with them in 2005 as a freelance Perl/XSLT web backend developer.
         technologies:
           - C
           - C++
@@ -85,7 +85,6 @@ career:
         description:
           - Developed and deployed a real-time billing daemon capable of processing concurrent transactions across multiple platform services.
           - Significantly reduced banner-system response latency by using a dependency graph to parallelize previously sequential requests to third-party services.
-          - Second engagement with AdLabs — first worked with them in 2005 as a freelance Perl/XSLT web backend developer.
 
   - companyName: DownStream Technologies
     duration: June 2011 - October 2012
@@ -135,7 +134,7 @@ career:
   - companyName: Intel
     duration: January 1998 - June 2005
     missions:
-      - position: C++ Developer — MPEG Processing Library
+      - position: C++ Developer — MPEG Processing Library, VTune Profiler
         company: Intel
         location: Nizhny Novgorod
         dates: January 1998 - June 2005
@@ -153,7 +152,7 @@ career:
         description:
           - Invented an algorithm based on Reed–Solomon error correction for Fourier transform coefficients.
           - Received US Patent 7,584,404, "Method and Apparatus for Multimedia Communications over Packet Channels", for this algorithm.
-          - Developed and maintained a test computer booking and OS image installation system with remote control of test computers. Its web interface used dynamic page modification before this approach became popular.
+          - Developed and maintained a test computer booking and OS image installation system with remote control of test computers; built its dynamic web interface in the early 2000s, before AJAX became mainstream.
 
   - companyName: Regional Depository of the Nizhny Novgorod Region
     duration: 1996 - January 1998
@@ -184,8 +183,11 @@ technicalSkills:
     - name: Domains
       competencies:
         - name: FFI & language bindings
+        - name: Memory safety & unsafe Rust
+        - name: Async Rust (tokio)
         - name: High-performance networking
         - name: Distributed systems
+        - name: Cross-platform (Linux / macOS / Windows)
         - name: Desktop GUI (Windows)
 
 sideProjects:
@@ -207,7 +209,7 @@ sideProjects:
 
   - name: zbobr
     position: personal
-    description: An LLM agent dispatcher automating development workflows through a GitHub interface. Used in real projects before equivalent features appeared in Claude Code and GitHub Copilot.
+    description: A state-machine LLM agent dispatcher that uses GitHub issues to keep task context. Used in real projects before equivalent features appeared in Claude Code and GitHub Copilot.
     link: milyin/zbobr
     type: github
     langs: Rust
@@ -232,5 +234,5 @@ education:
   - schoolName: Nizhny Novgorod State University, Mechanic and Mathematical faculty
     degree: Master's degree in Mathematics and Computer Science
     location: Nizhny Novgorod
-    dates: September 1992 - May 2000
+    dates: "2000"
     link: http://www.unn.ru/

@@ -99,6 +99,7 @@
               <b>{{ .Name }}</b> <span class="muted">({{ .Position }})</span> — {{ .Description }}
               <div class="muted small"><a href="https://github.com/{{ .Link }}">github.com/{{ .Link }}</a></div>
               {{ if eq .Name "zenoh" }}<div class="muted small">Eclipse membership: <a href="https://projects.eclipse.org/projects/iot.zenoh/who">projects.eclipse.org/projects/iot.zenoh</a></div>{{ end }}
+              {{ if eq .Name "zbobr" }}<div class="muted small">Example tasks: <a href="https://github.com/milyin-zenoh-zbobr/tasks/issues">github.com/milyin-zenoh-zbobr/tasks/issues</a></div>{{ end }}
             </div>
             {{ end }}
           </div>
