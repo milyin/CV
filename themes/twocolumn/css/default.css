@@ -140,6 +140,93 @@ h2 {
 a {
   color: inherit;
   text-decoration: none;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px 12px;
+  }
+
+  .name {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .name .name-alt {
+    font-size: 12px;
+  }
+
+  .profession {
+    font-size: 14px;
+  }
+
+  .columns {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .main {
+    flex: 1 1 auto;
+  }
+
+  .sidebar {
+    flex: 1 1 auto;
+    order: -1;
+  }
+
+  .photo {
+    width: 50%;
+  }
+
+  h2 {
+    font-size: 13px;
+    margin: 12px 0 6px 0;
+  }
+
+  body {
+    font-size: 12px;
+  }
+
+  .job-tech {
+    font-size: 11px;
+  }
+
+  .small {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px 8px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .name .name-alt {
+    display: block;
+    font-size: 11px;
+  }
+
+  .profession {
+    font-size: 13px;
+  }
+
+  .photo {
+    width: 40%;
+  }
+
+  body {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
 }
 
 @media print {
