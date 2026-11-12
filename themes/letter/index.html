@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{- /* CV Wonder's schema is fixed, so the letter fields are carried by CV
+           fields: career[0] holds the date, the recipient, the subject line and
+           the salutation/closing overrides; abstract holds the body paragraphs.
+           See letters/TEMPLATE.yml for the full mapping. */}}
+    {{- $nameParts := split .Person.Name " (" }}
+    {{- $name := index $nameParts 0 }}
+    {{- $date := "" }}
+    {{- $recipient := "" }}
+    {{- $organisation := "" }}
+    {{- $department := "" }}
+    {{- $address := "" }}
+    {{- $subject := "" }}
+    {{- $salutation := "" }}
+    {{- $closing := "Sincerely," }}
+    {{- $enclosures := "" }}
+    {{- $enclosureCount := 0 }}
+    {{- if .Career }}
+      {{- $c := index .Career 0 }}
+      {{- $organisation = $c.CompanyName }}
+      {{- if $c.Missions }}
+        {{- $m := index $c.Missions 0 }}
+        {{- $recipient = $m.Position }}
+        {{- $department = $m.Company }}
+        {{- $address = $m.Location }}
+        {{- $date = $m.Dates }}
+        {{- $subject = $m.Summary }}
+        {{- if $m.Technologies }}
+          {{- $enclosures = join $m.Technologies "; " }}
+          {{- $enclosureCount = len $m.Technologies }}
+        {{- end }}
+        {{- range $m.Description }}
+          {{- $kv := split . ": " }}
+          {{- if gt (len $kv) 1 }}
+            {{- $key := lower (trim (index $kv 0)) }}
+            {{- $value := trim (join (slice $kv 1) ": ") }}
+            {{- if eq $key "salutation" }}{{ $salutation = $value }}{{ end }}
+            {{- if eq $key "closing" }}{{ $closing = $value }}{{ end }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    {{- /* Body links are printed as numbered references at the foot of the
+           letter: collect their targets in document order (the numbering
+           itself is done with CSS counters, which count the same links in the
+           same order). */}}
+    {{- $references := "" }}
+    {{- range .Abstract }}
+      {{- range $i, $part := split . "href=\"" }}
+        {{- if $i }}
+          {{- $url := index (split $part "\"") 0 }}
+          {{- if $references }}{{ $references = print $references "\n" $url }}{{ else }}{{ $references = $url }}{{ end }}
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    {{- if not $salutation }}
+      {{- if $recipient }}
+        {{- $salutation = print "Dear " (index (split $recipient ", ") 0) "," }}
+      {{- else }}
+        {{- $salutation = "Dear Hiring Manager," }}
+      {{- end }}
+    {{- end }}
+    <title>{{ $name }}{{ if $subject }} — {{ $subject }}{{ else }} — Cover Letter{{ end }}</title>
+    <meta name="author" content="{{ $name }}"/>
+    <meta name="description" content="Cover letter by {{ $name }}"/>
+    <link href="css/default.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="letter">
+
+      <header class="letterhead">
+        <div class="sender-name">{{ $name }}</div>
+        {{- if .Person.Profession }}
+        <div class="sender-profession">{{ .Person.Profession }}</div>
+        {{- end }}
+        <div class="sender-contact">
+          {{- $sep := "" }}
+          {{- if .Person.Location }}{{ $sep }}<span>{{ .Person.Location }}</span>{{ $sep = " · " }}{{ end }}
+          {{- if .Person.Phone }}{{ $sep }}<span>{{ .Person.Phone }}</span>{{ $sep = " · " }}{{ end }}
+          {{- if .Person.Email }}{{ $sep }}<span><a href="mailto:{{ .Person.Email }}">{{ .Person.Email }}</a></span>{{ $sep = " · " }}{{ end }}
+        </div>
+        {{- $hasLinks := .Person.Site }}
+        {{- if .SocialNetworks }}{{ if or .SocialNetworks.Github .SocialNetworks.Linkedin }}{{ $hasLinks = "yes" }}{{ end }}{{ end }}
+        {{- if $hasLinks }}
+        <div class="sender-contact">
+          {{- $sep := "" }}
+          {{- if .Person.Site }}{{ $sep }}<span><a href="{{ .Person.Site }}">{{ replace .Person.Site "https://" "" }}</a></span>{{ $sep = " · " }}{{ end }}
+          {{- if .SocialNetworks }}
+            {{- if .SocialNetworks.Github }}{{ $sep }}<span><a href="https://github.com/{{ .SocialNetworks.Github }}">github.com/{{ .SocialNetworks.Github }}</a></span>{{ $sep = " · " }}{{ end }}
+            {{- if .SocialNetworks.Linkedin }}{{ $sep }}<span><a href="https://www.linkedin.com/in/{{ .SocialNetworks.Linkedin }}">linkedin.com/in/{{ .SocialNetworks.Linkedin }}</a></span>{{ $sep = " · " }}{{ end }}
+          {{- end }}
+        </div>
+        {{- end }}
+      </header>
+
+      {{- if $date }}
+      <div class="date">{{ $date }}</div>
+      {{- end }}
+
+      {{- if or $recipient $organisation }}
+      <div class="recipient">
+        {{- if $recipient }}<div>{{ $recipient }}</div>{{ end }}
+        {{- if $department }}<div>{{ $department }}</div>{{ end }}
+        {{- if $organisation }}<div>{{ $organisation }}</div>{{ end }}
+        {{- range split $address "\n" }}{{ if trim . }}<div>{{ trim . }}</div>{{ end }}{{ end }}
+      </div>
+      {{- end }}
+
+      {{- if $subject }}
+      <div class="subject">{{ $subject }}</div>
+      {{- end }}
+
+      <div class="salutation">{{ $salutation }}</div>
+
+      <div class="body">
+        {{- range .Abstract }}
+        <p>{{ . }}</p>
+        {{- end }}
+      </div>
+
+      <div class="closing">
+        <div class="closing-phrase">{{ $closing }}</div>
+        {{- if .Person.Depiction }}
+        <img class="signature" src="{{ .Person.Depiction }}" alt="{{ $name }}">
+        {{- else }}
+        <div class="signature-space"></div>
+        {{- end }}
+        <div class="signature-name">{{ $name }}</div>
+      </div>
+
+      {{- if $enclosures }}
+      <div class="enclosures">
+        <span class="enclosures-label">{{ if gt $enclosureCount 1 }}Enclosures{{ else }}Enclosure{{ end }}:</span>
+        {{ $enclosures }}
+      </div>
+      {{- end }}
+
+      {{- if $references }}
+      <div class="references">
+        {{- range split $references "\n" }}
+        <div class="reference">{{ replace . "mailto:" "" }}</div>
+        {{- end }}
+      </div>
+      {{- end }}
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+---
+# Rendered with the `letter` theme; see letters/TEMPLATE.yml for the field map.
+person:
+  name: Mikhail ILIN
+  profession: Senior Software Engineer — Rust / C++ / Systems Programming
+  location: Orsay (91), France
+  email: milyin@gmail.com
+  site: https://milyin.github.io/CV/
+
+socialNetworks:
+  github: milyin
+  linkedin: michael-ilyin
+
+career:
+  - companyName: Nabla
+    missions:
+      - position: Hiring Team
+        dates: today
+        summary: "Application for the Senior Back-end Engineer position"
+        description:
+          - "Closing: Best regards,"
+
+abstract:
+  - "I'm one of the <a href=\"https://projects.eclipse.org/projects/iot.zenoh/who\">key developers</a> of the open-source Eclipse Zenoh network protocol library, responsible specifically for the API surface of the project. As leader of the API team, I participated in the design and development of Rust, C, C++, Python, TypeScript, Java, and Kotlin APIs for our library, with the goal of keeping the API uniform across languages and providing a native developer experience."
+  - "I have a personal project, <a href=\"https://github.com/milyin/prebindgen/\">prebindgen</a>, which grew from this experience and which I'm determined to bring to wide-spread adoption. It has already <a href=\"https://zenoh.io/blog/2026-08-17-zenoh-1.10/#zenoh-java-and-zenoh-kotlin\">allowed</a> us to accelerate Zenoh-Java and Zenoh-Kotlin by a factor of two, with a significant reduction in manually written code."
+  - "I also made an state-machine based agenic development tool <a href=\"https://github.com/milyin/zbobr/\">zbobr</a> which I started working on at the end of 2025, made real use of it in the march of 2026, but finally had to pause it as the modern agent harnesses became much more sophisticated, making my tool less relevant. Though this gave me valuable experience in designing and implementing agentic systems, managing context, and providing MCP API."
+  - "I hope you will consider my application. I would be excited to contribute my experience and skills to modern clinical healthcare."

@@ -1,0 +1,69 @@
+---
+# Cover letter template for the `letter` theme (classic full-block business
+# letter).  Copy this file, fill it in, then render it:
+#
+#   ./scripts/generate-cover-letter-pdf.sh letters/<name>.yml
+#
+# CV Wonder's YAML schema is fixed, so the letter elements are carried by CV
+# fields.  The `letter` theme maps them like this:
+#
+#   person.*, socialNetworks.*            -> letterhead (sender block)
+#   career[0].missions[0].dates           -> date  (`today` = date of rendering)
+#   career[0].missions[0].position        -> recipient name / title
+#   career[0].missions[0].company         -> recipient department (optional)
+#   career[0].companyName                 -> recipient organisation
+#   career[0].missions[0].location        -> recipient postal address (one line
+#                                            per line of a `|` block)
+#   career[0].missions[0].summary         -> subject line
+#   career[0].missions[0].description     -> `Salutation:` / `Closing:`
+#                                            overrides (both optional)
+#   career[0].missions[0].technologies    -> enclosures, listed under the
+#                                            signature (optional)
+#   abstract                              -> body paragraphs, in order
+#
+# Body paragraphs are emitted as-is, so inline HTML works:
+# <a href="https://example.org">link text</a>, <b>bold</b>, <i>italic</i>.
+# A body link is coloured, marked with a superscript number and listed by that
+# number at the foot of the letter, so it survives being printed on paper.
+# Write the href with double quotes — that is how the theme finds the targets.
+
+person:
+  name: Mikhail ILIN
+  profession: Senior Software Engineer — Rust / C++ / Systems Programming
+  location: Orsay (91), France
+  email: milyin@gmail.com
+  site: https://milyin.github.io/CV/
+  # Optional: a scanned signature image, drawn above the typed name.  It must
+  # live inside the theme directory to be copied into the output, the way
+  # themes/twocolumn/images/profile.jpg does for the CV photo.
+  # depiction: images/signature.png
+
+socialNetworks:
+  github: milyin
+  linkedin: michael-ilyin
+
+career:
+  - companyName: Example GmbH
+    missions:
+      - position: Hiring Team
+        company: Developer Experience
+        location: |
+          Musterstraße 1
+          79098 Freiburg im Breisgau
+          Germany
+        # `today` is replaced with the date of rendering; any other value is
+        # printed verbatim (e.g. `12 September 2026`).
+        dates: today
+        summary: "Application for the Developer Experience Engineer position"
+        description:
+          # Both are optional.  Without them the salutation is derived from
+          # `position` ("Dear Hiring Team,") and the closing is "Sincerely,".
+          - "Salutation: Dear Hiring Team,"
+          - "Closing: Sincerely,"
+        technologies:
+          - Curriculum Vitae
+
+abstract:
+  - "First paragraph: the position applied for and where it was seen, plus the one sentence that says why the reader should keep reading."
+  - "Middle paragraphs: the concrete experience that matches the role, with evidence — projects, results, numbers."
+  - "Closing paragraph: what you would bring, and a plain request for an interview."

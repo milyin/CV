@@ -4,10 +4,10 @@ person:
   # secondary name; the part before the parenthesis is used as the page title.
   name: Mikhail ILIN (Michael Ilyin)
   depiction: images/profile.jpg
-  profession: Senior Software Engineer — Rust / C++ / Systems Programming
+  profession: Senior Rust / C / C++ Engineer — Systems Programming, API Design
   location: Orsay (91), France
   citizenship: FR
-  email: michael@ilyin.one
+  email: milyin@gmail.com
   site: https://github.com/milyin
   experience:
     years: 28
@@ -18,9 +18,10 @@ socialNetworks:
   linkedin: michael-ilyin
 
 abstract:
-  - "Systems software engineer with 25+ years in C/C++ and Rust since 2017, spanning network middleware, high-load backends, video transmission and desktop CAD/CAM applications."
-  - "Core contributor to Eclipse Zenoh, an open-source Rust communication protocol adopted as Tier 1 middleware in ROS 2; led its cross-language API team."
-  - "Expert in FFI and cross-language API design; holder of US Patent 7,584,404 for error correction in multimedia streaming over packet-loss networks."
+  - "Senior Rust engineer and core contributor to Eclipse Zenoh, developing high-performance communication software and cross-language APIs."
+  - "Designed, implemented, and lead the development of Rust library bindings for C, C++, Python, TypeScript, Kotlin and Java."
+  - "Developed GitHub-tasks based LLM-agent orchestration with context management and MCP interfaces"
+  - "Experienced in memory safety, performance optimization, API architecture, and cross-platform CI/CD."
 
 career:
   - companyName: ZettaScale Labs
@@ -30,7 +31,7 @@ career:
         company: ZettaScale Labs
         location: Gif-sur-Yvette (91), France
         dates: September 2022 - Present
-        summary: Core developer of Zenoh, an open-source network protocol library written in Rust. Led the team of 5 engineers aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin and Java.
+        summary: Core developer of Zenoh, an open-source networking library written in Rust. Led a five-engineer team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin and Java.
         technologies:
           - Rust
           - C
@@ -41,12 +42,12 @@ career:
           - Python
           - GitHub Actions
         description:
-          - Reworked the C binding, eliminating intermittent memory crashes with a suite of Rust macros that guarantee correct sizing and alignment of stack-allocated structures across the FFI boundary.
-          - Architected and implemented the high-performance C++ library binding from scratch.
-          - Automated generation of the JNI wrapper, replacing the manually written Java/Kotlin bindings and increasing measured throughput 1.87x.
-          - Drove the TypeScript binding to production readiness with automated build workflows, GUI examples, and 97% test coverage.
+          - Increased measured Java/Kotlin binding throughput 1.87x by generating JNI wrappers and replacing handwritten bindings.
+          - Eliminated intermittent C-binding memory crashes through Rust macros by ensuring correct structure size and alignment across the FFI boundary.
+          - Designed and implemented the high-performance C++ binding from scratch.
+          - Brought the TypeScript binding to production readiness with automated builds, GUI examples, and 97% test coverage.
           - Eliminated plugin-loading crashes caused by Rust ABI instability in the dynamic-library plugin system.
-          - Established a CMake-based multiplatform build and deployment pipeline.
+          - Established cross-platform CMake build and deployment workflows and CI/CD pipelines.
 
   - companyName: DownStream Technologies
     duration: February 2015 - September 2022
@@ -55,18 +56,16 @@ career:
         company: DownStream Technologies
         location: Marlborough, MA (Remote)
         dates: February 2015 - September 2022
-        summary: Rehired to develop core components of CAM350 (a CAM system for PCB manufacturing) and BluePrint (a PCB documentation authoring tool).
+        summary: Rehired to develop core components of CAM350 (a CAD/CAM system for PCB manufacturing) and BluePrint (a PCB documentation authoring tool).
         technologies:
           - C++
           - MFC
           - Win32
           - Visual Studio
         description:
-          - Migrated a massive legacy codebase (dating back to 1994) from 32-bit to 64-bit architecture and from 8-bit ASCII to Unicode.
-          - Eliminated recurring Visual Studio build errors in rarely used configurations by restructuring the project files hierarchically.
-          - Automated localization for Chinese and Japanese markets with a custom parser for Microsoft .rc resource files.
-          - Unified the shared GUI framework across separate engineering teams, enabling code reuse and eliminating conflicting modifications.
-          - Led a team of 4 developers designing and implementing the Bill of Materials (BOM) component shared between CAM350 and BluePrint.
+          - Migrated a legacy C++ codebase from 32-bit to 64-bit architecture and from ASCII to Unicode.
+          - Restructured Visual Studio projects to eliminate build errors and automated Chinese/Japanese localization with a custom resource-file parser.
+          - Unified the shared GUI framework across teams and led four developers delivering a common Bill of Materials component.
 
   - companyName: AdLabs
     duration: October 2012 - January 2015
@@ -116,9 +115,8 @@ career:
           - MFC
           - wxWidgets
         description:
-          - Built a configurable property-editing component with multiple value representations.
-          - Owned the printing subsystem, including a custom print-preview control.
-          - Ported multiple GUI components from MFC to wxWidgets.
+          - Built configurable property-editing and print-preview components; owned the printing subsystem.
+          - Ported GUI components from MFC to wxWidgets.
 
 # Kept for history; folded into the 2012-2015 AdLabs entry as a bullet.
 #  - companyName: AdLabs
@@ -177,16 +175,20 @@ technicalSkills:
       competencies:
         - name: CMake
         - name: GitHub Actions
+    - name: AI Developer Tools
+      competencies:
+        - name: MCP interfaces & agent orchestration
+        - name: Task-context persistence & tool-access restrictions
     - name: Domains
       competencies:
         - name: FFI & language bindings
         - name: Memory safety & unsafe Rust
         - name: Async Rust (tokio, async-std)
         - name: High-performance networking
+        - name: API design & architecture
         - name: Distributed systems
         - name: Cross-platform (Linux / macOS / Windows)
         - name: Desktop GUI (Windows)
-        - name: LLM & agent tooling
 
 sideProjects:
   # Description lines after the first follow the "Label: URL" form and are
@@ -210,14 +212,14 @@ sideProjects:
     color: dea584
 
   - name: zbobr
-    position: personal
+    position: personal prototype (paused)
     description: |-
-      A state-machine LLM agent dispatcher that uses GitHub issues to keep task context.
-      Example tasks: https://github.com/milyin-zenoh-zbobr/tasks/issues
+      Built a Rust state-machine orchestrator for coding agents, using GitHub issues to persist task context and MCP interfaces to expose tools and context with restricted access. Was used in practice in early 2026.
     link: milyin/zbobr
     type: github
     langs: Rust
     color: dea584
+
 
 # companyName groups the entries: each distinct value becomes a sidebar
 # section with that heading (e.g. Patents, Certifications).
