@@ -18,9 +18,8 @@ socialNetworks:
   linkedin: michael-ilyin
 
 abstract:
-  - "Senior Rust engineer and core contributor to Eclipse Zenoh, developing high-performance communication software and cross-language APIs."
-  - "Designed, implemented, and lead the development of Rust library bindings for C, C++, Python, TypeScript, Kotlin and Java."
-  - "Developed GitHub-tasks based LLM-agent orchestration with context management and MCP interfaces"
+  - "Senior Rust engineer and core contributor to Eclipse Zenoh, a high-performance distributed networking protocol library."
+  - "Designed, implemented, and led the development of cross-language APIs for C, C++, Python, TypeScript, Kotlin, and Java."
   - "Experienced in memory safety, performance optimization, API architecture, and cross-platform CI/CD."
 
 career:
@@ -31,7 +30,7 @@ career:
         company: ZettaScale Labs
         location: Gif-sur-Yvette (91), France
         dates: September 2022 - Present
-        summary: Core developer of Zenoh, an open-source networking library written in Rust. Led a five-engineer team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin and Java.
+        summary: Core developer of Zenoh, an open-source networking library written in Rust. Led a five-engineer team aligning its APIs across Rust, C, C++, Python, TypeScript, Kotlin, and Java.
         technologies:
           - Rust
           - C
@@ -42,9 +41,9 @@ career:
           - Python
           - GitHub Actions
         description:
-          - Increased measured Java/Kotlin binding throughput 1.87x by generating JNI wrappers and replacing handwritten bindings.
-          - Eliminated intermittent C-binding memory crashes through Rust macros by ensuring correct structure size and alignment across the FFI boundary.
-          - Designed and implemented the high-performance C++ binding from scratch.
+          - Designed and implemented the high-performance C++ API over the Zenoh-C binding.
+          - Rewrote the Zenoh-C FFI binding in Rust to improve memory safety and performance, and implemented macro-based tooling to ensure correct structure size and alignment across the FFI boundary, including in cross-platform builds.
+          - Implemented automatic binding generation for Java/Kotlin, which removed manual boilerplate code and increased throughput 1.87x.
           - Brought the TypeScript binding to production readiness with automated builds, GUI examples, and 97% test coverage.
           - Eliminated plugin-loading crashes caused by Rust ABI instability in the dynamic-library plugin system.
           - Established cross-platform CMake build and deployment workflows and CI/CD pipelines.
@@ -138,7 +137,7 @@ career:
         company: Intel
         location: Nizhny Novgorod
         dates: January 1998 - June 2005
-        summary: Engineered the MPEG video encoding/decoding library optimized for Intel CPUs; later developed and administered the VTune Profiler testing laboratory.
+        summary: Engineered an MPEG video encoding/decoding library optimized for Intel CPUs; later developed and administered the VTune Profiler testing laboratory.
         technologies:
           - C++
           - Video codecs
@@ -214,7 +213,7 @@ sideProjects:
   - name: zbobr
     position: personal prototype (paused)
     description: |-
-      Built a Rust state-machine orchestrator for coding agents, using GitHub issues to persist task context and MCP interfaces to expose tools and context with restricted access. Was used in practice in early 2026.
+      Built a Rust state-machine orchestrator for coding agents, using GitHub issues to persist task context and MCP interfaces to expose tools and context with restricted access. Used in practice in early 2026.
     link: milyin/zbobr
     type: github
     langs: Rust
